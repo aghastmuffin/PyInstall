@@ -4,11 +4,13 @@
 You may ask
     Why should I create my own exe?
   - It allows advanced customization, not avaliable in the normal installer.
+---
 #How To Build an Exe?
 The Choice is yours.
 Some Programs that I recommend to Build your file.
  - PyInstaller
  - CXFreeze
+
 Today we will talk about PyInstaller.
 ```sh
 pip install pyinstaller
