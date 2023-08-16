@@ -37,7 +37,7 @@ def download_all_files():
 
 root = tk.Tk()
 root.title("WinstallPy 3.0")
-copyrigh = Label(root, text="Apache Licence 2023")
+copyrigh = Label(root, text="Apache Licence 2023!")
 instruc = Label(root, text="Configure Endpoints to download files")
 start = Button(root, text="Start Download", command=lambda: Thread(target=download_all_files).start())
 progress = Progressbar(root, orient=HORIZONTAL, length=100, mode='determinate')
