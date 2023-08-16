@@ -5,6 +5,7 @@ import tkinter as tk
 from tkinter.ttk import *
 from tkinter import *
 from time import sleep
+from win10toast import ToastNotifier
 
 def download_progress_callback(count, block_size, total_size):
     percent = int(count * block_size * 100 / total_size)
@@ -16,6 +17,9 @@ def download_file(url):
     file_size = int(response.headers['Content-Length'])
     filename = url.split("/")[-1]  # Get the last part of the URL as the filename
     urllib.request.urlretrieve(url, filename, reporthook=download_progress_callback)
+    toaster = ToastNotifier()
+    if root.state()=="iconic":
+        toaster.show_toast("WinstallPy", "The Requested Install was completed while the application was in the background", duration=10, callback_on_click=callback, threaded=True)
 
 def download_all_files():
     for url in b:
